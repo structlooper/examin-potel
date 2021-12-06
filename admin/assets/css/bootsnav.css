@@ -1,0 +1,49 @@
+
+@media (max-width: 767px) {
+  nav.navbar.bootsnav .navbar-header {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+
+@media (min-width: 480px) and (max-width: 640px) {
+  nav.bootsnav.navbar-full ul.nav {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+
+
+nav.navbar.navbar-inverse .form-control {
+  background-color: #333;
+  border-color: #303030;
+  color: #fff;
+}
+
+
+.top-search .input-group .form-control::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+  color: #666666;
+  opacity: 1;
+}
+
+.top-search .input-group .form-control::-moz-placeholder {
+    /* Firefox 19+ */
+  color: #666666;
+  opacity: 1;
+  align-items: center;
+}
+
+.top-search .input-group .form-control::-ms-input-placeholder {
+    /* IE 10+ */
+  color: #666666;
+  opacity: 1;
+}
+
+.top-search .input-group .form-control::-moz-placeholder {
+    /* Firefox 18- */
+  color: #666666;
+  opacity: 1;
+}
+

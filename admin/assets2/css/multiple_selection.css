@@ -1,0 +1,169 @@
+/******************************************* MULTIPLE SELECTION ************************************************/
+
+/* The DropDownContainer */
+.DropDownContainer {
+    display: block;
+    position: relative;
+    /*padding-left: 35px;*/
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    user-select: none;
+    font-weight: 100;
+    padding: 2px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-transform: uppercase;
+}
+
+/* Hide the browser's default checkbox */
+.DropDownContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 19px;
+    width: 19px;
+    background-color: #eee;
+    margin-left: 10px;
+    margin-top: 7px;
+}
+
+/* On mouse-over, add a grey background color */
+.DropDownContainer:hover input~.checkmark {
+    background-color: #d436e2;
+}
+
+/* When the checkbox is checked, add a blue background */
+.DropDownContainer input:checked~.checkmark {
+    background-color: #5e0a3b;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.DropDownContainer input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.DropDownContainer .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.DropDownList
+{
+    height: 0px;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    background-color: #e990e980;
+    margin-top:5px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* .DropDownData:focus+.DropDownList {
+    height: 300px;
+    overflow: scroll;
+    opacity: 1;
+} */
+
+.DropDownToggleList {
+    height: 300px;
+    overflow: scroll;
+    opacity: 1;
+}
+
+
+/* .DropDownList:hover
+{
+    height: 300px;
+    overflow: scroll;
+    opacity: 1;
+} */
+
+
+.DropDownData{	
+    text-transform: capitalize;
+    padding-right: 50px;
+    cursor: pointer!important;
+
+    /* width:100%;
+    background-color: transparent;
+    padding:10px;
+    outline:none;
+    border:none;
+    border-bottom:solid 1px #2a2b3d; */
+}
+.service_text1
+{
+    text-align:center;
+    font-weight:bold;
+    font-size:16px;
+}
+
+.DropDownImageStyle {
+    width:20px;
+    height:20px;
+}
+
+.DropDownChevron{
+    position: absolute;
+    right: 30px;
+    top: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.DropDownChevronToggle {
+    transform: rotate(90deg);
+}
+
+/*.question_list_div{
+    display:none;
+}*/
+
+.DropDownContainer p{
+    margin-left: 30px;
+}
+
+
+@media(max-width:975px)
+{
+    .DropDownContainer
+    {
+    font-size:12px;
+    }
+}
+
+ .quest-text{
+      margin-left: 25px !important;
+    }
+.arrow{
+    position: absolute;
+    right: 30px;
+    top: 0px !important; 
+    cursor: pointer;
+}
+.questionText{
+    margin-left:3% !important;
+}
