@@ -298,7 +298,7 @@ if(isset($_POST['create_chapter'])){
                     <input type="text" class="InputDefault DropDownId" name="update_question_list" autocomplete="off">
 
                     <i class="fas fa-chevron-right DropDownChevron"></i>
-                    <input type="text" readonly class="InputDefault ValidInputField DropDownData showData" name="update_question_ids">
+                    <input type="text" readonly class="InputDefault ValidInputField DropDownData showData" name="update_question_ids" id="update_question_ids">
 
                     <div class="DropDownList" id="update_Question-list">
                         <br>
@@ -880,6 +880,34 @@ if(isset($_POST['create_chapter'])){
 </script>
 
 <script type="text/javascript">
+
+    const toggleQuestion = question_id => {
+        let selected_questions = localStorage.getItem('selected_questions');
+        let selected_questions_array=[];
+        if (selected_questions == '' || selected_questions === undefined){
+
+        }else {
+            selected_questions_array = selected_questions.split(',');
+        }
+           if (selected_questions_array.includes(question_id)){
+               // remove item
+               selected_questions_array.splice(selected_questions_array.indexOf(question_id), 1);
+               let selected_service = selected_questions_array.join(',');
+               localStorage.setItem('selected_questions',selected_service);
+               $('#update_question_ids').val(selected_service)
+               // console.log('this',s)
+           }else{
+               // add item
+              selected_questions_array.push(question_id);
+               let selected_service = selected_questions_array.join(',');
+               localStorage.setItem('selected_questions',selected_service);
+               $('#update_question_ids').val(selected_service)
+           }
+
+
+    }
+
+
     $(document).ready(function(){
 
         var post_arr = [];
@@ -1049,7 +1077,7 @@ if(isset($_POST['create_chapter'])){
                         console.log('checking',checkOrNot)
                         html = `
                 <label class='DropDownContainer'><span class='questionText'>${singleData.question}</span>
-                <input class='ItemsCheckBox ClearCheckBox' DropDownId='${singleData.questionId}' value='${singleData.question}' type='checkbox' ${checkOrNot} ><span class='checkmark'></span>
+                <input class='ItemsCheckBox ClearCheckBox' DropDownId='${singleData.questionId}' value='${singleData.question}' type='checkbox' ${checkOrNot} onclick="toggleQuestion('${singleData.questionId}')"><span class='checkmark'></span>
                 </label>
             `
                         if (index === 0) {
@@ -1112,6 +1140,7 @@ if(isset($_POST['create_chapter'])){
                     url:'ajax/ajaxfile.php',
                     data:'question_IDs='+question_IDs,
                     success:function(html){
+                        console.log(html)
                         $('#update_Question-list').html(html);
                         //  $("#update_chapterName").val(cid);
                         //  $('#update_Question-list').html(html);
@@ -1165,7 +1194,14 @@ if(isset($_POST['create_chapter'])){
 
                     var total_questions = examData[0].total_questions;
                     var questionIDS = examData[0].questions_ids;
-                    fetch_questions(questionIDS);
+                    // var array = questionIDS.split(',');
+                    localStorage.setItem('selected_questions',questionIDS);
+                    $('#update_question_ids').val(questionIDS)
+                    if (questionIDS == ''){
+                        $('#update_Question-list').html('')
+                    }else{
+                        fetch_questions(questionIDS);
+                    }
 
                     //var array = questionIDS.split(",");
                     //for (i=0;i<array.length;i++){

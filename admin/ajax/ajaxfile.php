@@ -198,7 +198,7 @@ if(isset($_POST['question_IDs'])){
         $question = $question_list['question'];
          //echo "<input type='checkbox' value='$question_id'><option value='$question_id'>$question</option>";
 		echo "<label class='DropDownContainer'>$question
-              <input class='ItemsCheckBox ClearCheckBox check' DropDownId='$question_id' value='$question' type='checkbox' name='question_chkbx' id='$question_id' checked><span class='checkmark'></span>             
+              <input class='ItemsCheckBox ClearCheckBox check' DropDownId='$question_id' value='$question' type='checkbox' name='question_chkbx' id='$question_id' checked onclick=toggleQuestion('$question_id')><span class='checkmark'></span>             
             </label> ";
         }
     }else{

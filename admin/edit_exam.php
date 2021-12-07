@@ -1,7 +1,7 @@
 <?php 
 //require_once 'includes/config.php';
 require_once '../includes/config.php';
-require_once 'includes/functions.php';
+require_once '../includes/functions.php';
 
 //fetch the exam details and fill the edit form fields when update exam button will be clicked on add_exam.php page and send that form back....
 
