@@ -49,7 +49,7 @@
     <!-- Main content -->
     <section class="content ">
       <div class="container-fluid ">
-        <div class="row ">
+        <div class="row">
           <!-- left column -->
           <div class="col-md-12 ">
               <!-- form start -->
@@ -69,7 +69,8 @@
                 <tbody>
                   <tr>
                   </div>
-                  <th scope="row ">    
+        </div>
+                  <th scope="row ">
                     <!-- checkbox -->
                     <input type="checkbox" id="defaultCheck" name="example2">
                 </th>
@@ -137,6 +138,7 @@
                 </tbody>
               </table>
             <!-- /.card -->
+      </div>
     </section>
     <!-- /.content -->
   </div>
@@ -165,19 +167,19 @@
                     <div class="form-group row">
                         <div class="col-sm-3">
                           <input type="radio" style="transform: scale(0.5);" class="form-control" name="show_answer" id="show_answer" placeholder="yes">
-                          <lebel style="position: relative; top: -32px; left: 100px; margin: 5px; padding: 5px;">Objective</lebel>
+                          <label style="position: relative; top: -32px; left: 100px; margin: 5px; padding: 5px;">Objective</label>
                         </div>
                             <div class="col-sm-3">
                               <input type="radio" style="transform: scale(0.5);" class="form-control" name="show_answer" id="show_answer" placeholder="yes">
-                              <lebel style="position: relative; top: -32px; left: 100px; margin: 5px; padding: 5px;">True/False</lebel>
+                              <label style="position: relative; top: -32px; left: 100px; margin: 5px; padding: 5px;">True/False</label>
                             </div>
                             <div class="col-sm-3">
                                 <input type="radio" style="transform: scale(0.5);" class="form-control" name="show_answer" id="show_answer" placeholder="yes">
-                                <lebel style="position: relative; top: -32px; left: 100px; margin: 10px; padding: 10px;">Fill in the blanks</lebel>
+                                <label style="position: relative; top: -32px; left: 100px; margin: 10px; padding: 10px;">Fill in the blanks</label>
                               </div>
                               <div class="col-sm-3">
                                 <input type="radio" style="transform: scale(0.5);" class="form-control" name="show_answer" id="show_answer" placeholder="yes">
-                                <lebel style="position: relative; top: -32px; left: 100px; margin: 5px; padding: 5px;">Subjective</lebel>
+                                <label style="position: relative; top: -32px; left: 100px; margin: 5px; padding: 5px;">Subjective</label>
                               </div>
                         </div>
 

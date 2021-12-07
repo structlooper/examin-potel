@@ -1,4 +1,4 @@
-<?php
+    <?php
 include "header.php";
 $student_id = $_SESSION['student']['id'];
 

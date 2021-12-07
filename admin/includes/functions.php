@@ -22,6 +22,22 @@ function getData($table){
 		return 0;
 	}  	
 }
+function getHelpData($table){
+	global $conn;
+	//Fetch classes from database;
+	$query = "SELECT * FROM $table ORDER BY id DESC";
+
+	$result = mysqli_query($conn,$query);
+	if($result->num_rows >0){
+		$data = array();
+		while($row = $result->fetch_assoc()){
+			$data[] = $row;
+		}
+		return $data;
+	}else{
+		return 0;
+	}
+}
 
 function addData($table,$data){
 

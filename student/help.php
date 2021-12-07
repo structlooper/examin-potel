@@ -1,6 +1,6 @@
     <?php 
     require_once 'header.php';
-    require_once 'includes/functions.php';
+    require_once '../includes/functions.php';
     $student_id = $_SESSION['student']['id'];
 
     $msg = NULL;

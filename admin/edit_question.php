@@ -659,24 +659,24 @@ require_once 'includes/header.php';
                   
                    <div class="redio_btn col-md-3">
                        <input type="radio" class="redio_button" id="quetion_objective" name="show_answer" value="objective" >
-                       <lebel>Objective</lebel>
+                       <label>Objective</label>
                    </div>
                     <div class="redio_btn col-md-3">
                         <input type="radio" class="redio_button" id="true_false" name="show_answer" value="true_false">
-                        <lebel>True/False</lebel>
+                        <label>True/False</label>
                     </div>
                     <div class="redio_btn col-md-3">
                           <input type="radio" class="redio_button" id="fill_in_blank" name="show_answer" value="fill_in_blank">
-                          <lebel>Fill in the blanks</lebel>
+                          <label>Fill in the blanks</label>
                     </div>
                      <div class="redio_btn col-md-3">
                          <input type="radio" class="redio_button" id="subjective" name="show_answer" value="subjective">
-                         <lebel>Subjective</lebel>
+                         <label>Subjective</label>
                      </div>
 
                       <div class="redio_btn col-md-3">
                          <input type="radio" class="redio_button" id="matchDfollowing" name="show_answer" value="match_the_following">
-                         <lebel>Match the following</lebel>
+                         <label>Match the following</label>
                      </div>
 
                 </div>
@@ -780,15 +780,15 @@ require_once 'includes/header.php';
 
                  <div class="true_false row">
                  <div class="redio_btn col-md-4 true_false">
-                    <lebel>True/False</lebel>
+                    <label>True/False</label>
                   </div>
                     <div class="redio_btn col-md-4">
                        <input type="radio" class="redio_button" name="QuesCheck"  value="true">
-                       <lebel>True</lebel>
+                       <label>True</label>
                    </div>
                     <div class="redio_btn col-md-4">
                         <input type="radio" class="redio_button" name="QuesCheck"  value="false">
-                        <lebel>False</lebel>
+                        <label>False</label>
                     </div>
                </div>
 

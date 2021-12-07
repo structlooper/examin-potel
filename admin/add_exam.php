@@ -675,7 +675,7 @@ foreach ($exam_quest as $questions_ids)
          </div>
          <div class="redio_btn col-sm-4">
           <input type="radio" class="redio_buttons" name="show_answer" value="no">
-          <lebel>No</lebel>
+          <label>No</label>
         </div>
       </div>
 
@@ -689,7 +689,7 @@ foreach ($exam_quest as $questions_ids)
       </div>
       <div class="redio_btn col-sm-4">
        <input type="radio" class="redio_button" name="negative_marking" value="no">
-       <lebel>No</lebel>
+       <label>No</label>
      </div>
    </div>
 
@@ -702,7 +702,7 @@ foreach ($exam_quest as $questions_ids)
      </div>
      <div class="redio_btn col-sm-4">
        <input type="radio" class="redio_button paid_no" name="paid_exam" value="no" checked>
-       <lebel>No</lebel>
+       <label>No</label>
      </div>
    </div>
 

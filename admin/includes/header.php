@@ -302,7 +302,13 @@ if(!isset($_SESSION['admin'])){
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Gems of e-AgriEdu</p>
                                     </a>
-                                </li>   
+                                </li>
+                                <li class="nav-item">
+                                    <a href="help_list.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Help support</p>
+                                    </a>
+                                </li>
                        
                             </ul>
                         </li>

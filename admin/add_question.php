@@ -566,7 +566,7 @@ if(isset($_GET['did']) && !empty($_GET['did'])){
               <tbody>
                 <?php 
                 $i = 1;                  
-                $res = mysqli_query($conn,"SELECT * FROM questions");
+                $res = mysqli_query($conn,"SELECT * FROM questions ORDER BY id DESC");
 
                 while($Question_list = mysqli_fetch_assoc($res)){ 
                     $question;
@@ -944,24 +944,24 @@ if(isset($_GET['did']) && !empty($_GET['did'])){
                   
                    <div class="redio_btn col-md-3">
                        <input type="radio" class="redio_button" id="quetion_objective_update" name="update_show_answer" value="objective" >
-                       <lebel>Objective</lebel>
+                       <label>Objective</label>
                    </div>
                     <div class="redio_btn col-md-3">
                         <input type="radio" class="redio_button" id="true_false_update" name="update_show_answer" value="true_false">
-                        <lebel>True/False</lebel>
+                        <label>True/False</label>
                     </div>
                    <!--  <div class="redio_btn col-md-3">
                           <input type="radio" class="redio_button" id="fill_in_blank_update" name="update_show_answer" value="fill_in_blank">
-                          <lebel>Fill in the blanks</lebel>
+                          <label>Fill in the blanks</label>
                     </div>
                      <div class="redio_btn col-md-3">
                          <input type="radio" class="redio_button" id="subjective_update" name="update_show_answer" value="subjective">
-                         <lebel>Subjective</lebel>
+                         <label>Subjective</label>
                      </div> -->
 
                      <!--  <div class="redio_btn col-md-3">
                          <input type="radio" class="redio_button" id="matchDfollowing_update" name="update_show_answer" value="match_the_following">
-                         <lebel>Match the following</lebel>
+                         <label>Match the following</label>
                      </div> -->
 
                 </div>
@@ -1082,15 +1082,15 @@ if(isset($_GET['did']) && !empty($_GET['did'])){
 
                  <div class="true_false_update row">
                  <div class="redio_btn col-md-4 true_false">
-                    <lebel>True/False</lebel>
+                    <label>True/False</label>
                   </div>
                     <div class="redio_btn col-md-4">
                        <input type="radio" class="redio_button" name="update_QuesCheck"  value="true" id="upd_true">
-                       <lebel>True</lebel>
+                       <label>True</label>
                    </div>
                     <div class="redio_btn col-md-4">
                         <input type="radio" class="redio_button" name="update_QuesCheck"  value="false" id="upd_false">
-                        <lebel>False</lebel>
+                        <label>False</label>
                     </div>
                </div>
 

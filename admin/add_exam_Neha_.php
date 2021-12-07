@@ -502,11 +502,11 @@ if(isset($_GET['id']) && $_GET['id']!=''){
         <label for="colFormLabelSm" class="col-sm-4">Show Answer Sheet</label>
         <div class="redio_btn col-sm-4">
          <label>
-           <input type="radio"  class="redio_button" name="show_answer" value="yes" checked> Yes</lebel>
+           <input type="radio"  class="redio_button" name="show_answer" value="yes" checked> Yes</label>
          </div>
          <div class="redio_btn col-sm-4">
           <input type="radio" class="redio_buttons" name="show_answer" value="no">
-          <lebel>No</lebel>
+          <label>No</label>
         </div>
       </div>
 
@@ -520,7 +520,7 @@ if(isset($_GET['id']) && $_GET['id']!=''){
       </div>
       <div class="redio_btn col-sm-4">
        <input type="radio" class="redio_button" name="negative_marking" value="no">
-       <lebel>No</lebel>
+       <label>No</label>
      </div>
    </div>
 
@@ -533,7 +533,7 @@ if(isset($_GET['id']) && $_GET['id']!=''){
      </div>
      <div class="redio_btn col-sm-4">
        <input type="radio" class="redio_button paid_no" name="paid_exam" value="no" checked>
-       <lebel>No</lebel>
+       <label>No</label>
      </div>
    </div>
 

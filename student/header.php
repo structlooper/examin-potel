@@ -3,9 +3,11 @@
     if(!isset($_SESSION['student'])){
       // echo "<script>window.location='../index.php'</script>";
   echo "<script>window.location='login.php'</script>";      
-}else{ 
+}else{
     $student_id = $_SESSION['student']['id'];
-} 
+
+
+    }
 
 
     function head(){ ?>
@@ -54,7 +56,7 @@
                     <a href="profile.php" class="list-group-item list-group-item-action"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;My Profile</a>
                     <a href="myexam.php" class="list-group-item list-group-item-action"><i class="fa fa-list-alt" aria-hidden="true"></i>&nbsp;&nbsp;My Exam</a>
                     <a href="result.php" class="list-group-item list-group-item-action"><i class="fa fa-list-alt" aria-hidden="true"></i>&nbsp;&nbsp;Result</a>
-                    <a href="study_material.php" class="list-group-item list-group-item-action"><i class="fa fa-list-alt" aria-hidden="true"></i>&nbsp;&nbsp;Study Material</a>
+<!--                    <a href="study_material.php" class="list-group-item list-group-item-action"><i class="fa fa-list-alt" aria-hidden="true"></i>&nbsp;&nbsp;Study Material</a>-->
                     <a href="#" class="list-group-item list-group-item-action"><i class="fa fa-list-alt" aria-hidden="true"></i>&nbsp;&nbsp;Payment</a>
                     <a href="transaction.php" class="list-group-item list-group-item-action"><i class="fa fa-list-alt" aria-hidden="true"></i>&nbsp;&nbsp;Transaction History</a>
                     <a href="help.php" class="list-group-item list-group-item-action"><i class="fa fa-list-alt" aria-hidden="true"></i>&nbsp;&nbsp;Help</a>
@@ -89,11 +91,15 @@
                     </ul>
                 </div> -->
                 <div class="collapse navbar-collapse dropdown">
-                <img src="img/profile.png" id="MenuIcon" class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <img src="<?php
+                $image = $_SESSION['student']['student_photo'] ? $hostname.'/uploads/student-profile_pic/'.$_SESSION['student']['student_photo'] : 'img/profile.png';
+//                $image = 'img/profile.png';
+                echo $image;
+                ?>" id="MenuIcon" class="navbar-nav ml-auto mt-2 mt-lg-0" style="border-radius: 200px">
              
                 <div class="ShowMenu">
                    <a href="<?php echo $hostname; ?>"> <div id="home"><i class="fas fa-home"></i>&nbsp;&nbsp;Homepage</div></a>
-                    <a href="index.php"> <div id="home"><i class="fas fa-home"></i>&nbsp;&nbsp;Home</div></a>
+                    <a href="index.php"> <div id="home"><i class="fas fa-home"></i>&nbsp;&nbsp;Dashboard</div></a>
                     <a href="profile.php"> <div id="profile"><i class="fas fa-user"></i>&nbsp;&nbsp;Profile</div></a>
                     <a href="changePass.php"><div id="changePass"><i class="fas fa-wrench"></i>&nbsp; Change Password</div></a>
                     <a href="logout.php"><div id="logout"><i class="fas fa-sign-out-alt"></i>&nbsp; Logout</div></a>

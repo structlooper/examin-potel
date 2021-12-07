@@ -81,9 +81,10 @@ if(isset($_POST['create_chapter'])){
     <script>
         $(document).ready(function(){
             $(".save").click(function(){
-                var formMaster = $(".form-master").val();
+                var formMaster = $("#chapterName").val();
                 var className = $("#className").val();
                 var subjectName = $("#subjectName").val();
+                console.log('formMaster',formMaster)
 
                 if(className == null){
                     alert("Please select Class Name");
@@ -97,7 +98,7 @@ if(isset($_POST['create_chapter'])){
                 }
                 else if(formMaster == ""){
                     alert("Enter chapter Name");
-                    $(".form-master").focus();
+                    $("#chapterName").focus();
                     return false;
                 }
                 // else{
@@ -298,7 +299,7 @@ if(isset($_POST['create_chapter'])){
                     <input type="text" class="InputDefault DropDownId" name="update_question_list" autocomplete="off">
 
                     <i class="fas fa-chevron-right DropDownChevron"></i>
-                    <input type="text" readonly class="InputDefault ValidInputField DropDownData showData" name="update_question_ids" id="update_question_ids">
+                    <input type="text" readonly class="InputDefault ValidInputField DropDownData showData update_question_ids" name="update_question_ids" >
 
                     <div class="DropDownList" id="update_Question-list">
                         <br>
@@ -545,17 +546,17 @@ if(isset($_POST['create_chapter'])){
                 <label lass="col-sm-12">Choose the questions from list for this exam</label>
                 <div class="DropDownHead col-md-12" id="dropdowndHead">
                     <div class="row">
-                        <input type="text" class="InputDefault DropDownId col-md-6" name="question_list" autocomplete="off">
+                        <input type="text" class="InputDefault DropDownId " name="question_list" autocomplete="off">
 
                         <i class="fas fa-chevron-right DropDownChevron"></i>
-                        <input type="text" readonly class="InputDefault ValidInputField DropDownData showData col-md-6" name="question_ids">
+                        <input type="text" readonly class="InputDefault ValidInputField DropDownData showData  update_question_ids" name="question_ids">
+                    </div>
 
+                        <br>
 
                         <div class="DropDownList privisue_quest" id="Question-list">
-                            <br>
 
                         </div>
-                    </div>
                 </div>
             </div>
 
@@ -661,7 +662,7 @@ if(isset($_POST['create_chapter'])){
                 </div>
                 <div class="redio_btn col-sm-4">
                     <input type="radio" class="redio_buttons" name="show_answer" value="no">
-                    <lebel>No</lebel>
+                    <label>No</label>
                 </div>
             </div>
 
@@ -675,7 +676,7 @@ if(isset($_POST['create_chapter'])){
                 </div>
                 <div class="redio_btn col-sm-4">
                     <input type="radio" class="redio_button" name="negative_marking" value="no">
-                    <lebel>No</lebel>
+                    <label>No</label>
                 </div>
             </div>
 
@@ -688,7 +689,7 @@ if(isset($_POST['create_chapter'])){
                 </div>
                 <div class="redio_btn col-sm-4">
                     <input type="radio" class="redio_button paid_no" name="paid_exam" value="no" checked>
-                    <lebel>No</lebel>
+                    <label>No</label>
                 </div>
             </div>
 
@@ -884,7 +885,8 @@ if(isset($_POST['create_chapter'])){
     const toggleQuestion = question_id => {
         let selected_questions = localStorage.getItem('selected_questions');
         let selected_questions_array=[];
-        if (selected_questions == '' || selected_questions === undefined){
+
+        if (selected_questions == '' || selected_questions == 'undefined' || selected_questions == null){
 
         }else {
             selected_questions_array = selected_questions.split(',');
@@ -894,14 +896,16 @@ if(isset($_POST['create_chapter'])){
                selected_questions_array.splice(selected_questions_array.indexOf(question_id), 1);
                let selected_service = selected_questions_array.join(',');
                localStorage.setItem('selected_questions',selected_service);
-               $('#update_question_ids').val(selected_service)
+               $('.update_question_ids').val(selected_service)
                // console.log('this',s)
            }else{
                // add item
-              selected_questions_array.push(question_id);
+               console.log(selected_questions)
+
+               selected_questions_array.push(question_id);
                let selected_service = selected_questions_array.join(',');
                localStorage.setItem('selected_questions',selected_service);
-               $('#update_question_ids').val(selected_service)
+               $('.update_question_ids').val(selected_service)
            }
 
 
@@ -986,14 +990,19 @@ if(isset($_POST['create_chapter'])){
                             singleData = JSON.parse(singleData)
 
                             let checkOrNot = '';
+                            let activeOrNot = '';
                             if (questionId.includes(singleData.questionId)) {
                                 checkOrNot = 'checked';
                             }
-                            let selected_ques = $('#selected_questions').val().split(',')
-                            console.log('val',selected_ques)
+                            let selected_ques = $('#selected_questions').val()
+                            if (typeof(selected_ques) != 'undefined'){
+                                selected_ques = selected_ques.split(',')
+                                activeOrNot = (selected_ques.includes(singleData.questionId))?'active_class':''
+                            }
+
                             html = `
-                <label class='DropDownContainer'><span class='questionText  ${(selected_ques.includes(singleData.questionId))?'active_class':''}'>${singleData.question}</span>
-                <input class='ItemsCheckBox ClearCheckBox' DropDownId='${singleData.questionId}' value='${singleData.question}' type='checkbox' ${checkOrNot} ><span class='checkmark'></span>
+                <label class='DropDownContainer'><span class='questionText  ${activeOrNot}'>${singleData.question}</span>
+                <input class='ItemsCheckBox ClearCheckBox' DropDownId='${singleData.questionId}' value='${singleData.question}' type='checkbox' ${checkOrNot} onclick="toggleQuestion('${singleData.questionId}')"><span class='checkmark'></span>
                 </label>
             `
                             if (index === 0) {
@@ -1196,7 +1205,7 @@ if(isset($_POST['create_chapter'])){
                     var questionIDS = examData[0].questions_ids;
                     // var array = questionIDS.split(',');
                     localStorage.setItem('selected_questions',questionIDS);
-                    $('#update_question_ids').val(questionIDS)
+                    $('.update_question_ids').val(questionIDS)
                     if (questionIDS == ''){
                         $('#update_Question-list').html('')
                     }else{

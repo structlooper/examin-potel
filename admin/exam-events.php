@@ -104,8 +104,8 @@ require_once 'includes/header.php';
             <tbody id="myTable">
                 <?php
                 $i = 1;
-//                $todayDate = date("Y-m-d");
-                $todayDate = '2021-05-01';
+                $todayDate = date("Y-m-d");
+//                $todayDate = '2021-05-01';
                 $query_to_get = "SELECT * FROM exam WHERE exam_date = '".$todayDate."'";
 
 
