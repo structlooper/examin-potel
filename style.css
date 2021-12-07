@@ -2715,7 +2715,7 @@ body, .banner-area,
 }
 
 .popular-courses-items .info {
-  background: #ffffff none repeat scroll 0 0;
+  /*background: #ffffff none repeat scroll 0 0;*/
   overflow: hidden;
   padding: 30px;
   height: 380px;
@@ -4720,7 +4720,7 @@ body, .banner-area,
 .reg-area .reg-items .reg-form, 
 .reg-area .reg-items .thumb {
   display: table-cell;
-  float: none;
+  /*float: none;*/
   vertical-align: middle;
 }
 
@@ -6956,9 +6956,9 @@ input::-webkit-outer-spin-button,
 }
 
 .popular-course-item{
-  height: 595px;
+  height: 566px;
 }
 
 #course-img{
-  height: 130px;
+  height: 250px;
 }

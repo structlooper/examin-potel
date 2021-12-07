@@ -533,7 +533,7 @@ require_once 'functions.php';
                         <div class="item popular-course-item">
                             <div class="thumb">
                                 <a href="#">
-                                    <img src="uploads/package-img/<?php echo $package['image'];?>" alt="Thumb" id="course-img">
+                                    <img src="uploads/package-img/<?php echo $package['image'];?>" alt="Thumb" id="course-img" >
                                 </a>
                                 <div class="price">Price: <?php echo $package['amount'];?> Rs.</div>
                             </div>
@@ -544,7 +544,7 @@ require_once 'functions.php';
                                     </div>
                                 </div>
 
-                                <ul class="package">
+<!--                                <ul class="package">-->
                                 <?php
                                 // Query to fetch exams in this package...
                                 // $featured_exams = $package['featured_exams'];
@@ -554,10 +554,10 @@ require_once 'functions.php';
                                 //   while($allexamdata = mysqli_fetch_assoc($all_exam_query)){ ?>
                                     <!-- <li><a href="#"><?php //echo $allexamdata['exam_name'];?></a></li>     -->
                                  <?php // } } ?>
-                                </ul>
+<!--                                </ul>-->
                                 <p class="description">
                                     <?php
-                                   echo substr($package['discription'],0,20)."...";
+                                   echo substr($package['discription'],0,40)."...";
 
                                     ?>
                                 </p>
@@ -766,7 +766,7 @@ require_once 'functions.php';
 
                         <div class="advisor-item">
                             <div class="info-box">
-                              <img src="<?php echo $hostname;?>/admin/latest_news/gems_e_agriedu/<?php echo $alladvisordata['gems_e_agriedu_file'];?>" alt="Thumb">
+                              <img src="<?php echo $hostname;?>/admin/latest_news/gems_e_agriedu/<?php echo $alladvisordata['gems_e_agriedu_file'];?>" alt="Thumb" style="height: 219px;">
                                 <div class="info-title">
                                     <h4><?php echo $alladvisordata['gems_e_agriedu_title'];?></h4>
                                     <span><?php echo $alladvisordata['position'];?></span>
@@ -1169,7 +1169,7 @@ require_once 'functions.php';
                         </form>
                     </div>
                     <div class="col-md-6 thumb">
-                        <img src="assets/img/800x800.png" alt="Thumb">
+                        <img src="<?= $hostname ?>/assets/contact_page.io.jpg" alt="Thumb" style="max-width: 80%">
                     </div>
                 </div>
             </div>
@@ -1197,7 +1197,7 @@ require_once 'functions.php';
                         <!-- Single Item -->
                         <div class="item">
                             <div class="col-md-5 thumb">
-                                <img src="assets/img/800x800.png" alt="Thumb">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyeZfE0GIKmzCLp4TNuhxTiUTbn6EpKOW89g&usqp=CAU" alt="Thumb" style="height: 200px">
                             </div>
                             <div class="col-md-7 info">
                                 <p>
@@ -1211,7 +1211,7 @@ require_once 'functions.php';
                         <!-- Single Item -->
                         <div class="item">
                             <div class="col-md-5 thumb">
-                                <img src="assets/img/800x800.png" alt="Thumb">
+                                <img src="data:image/jpeg;base64,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" alt="Thumb" style="height: 200px">
                             </div>
                             <div class="col-md-7 info">
                                 <p>
@@ -1225,7 +1225,7 @@ require_once 'functions.php';
                         <!-- Single Item -->
                         <div class="item">
                             <div class="col-md-5 thumb">
-                                <img src="assets/img/800x800.png" alt="Thumb">
+                                <img src="https://mpng.subpng.com/20180712/qvg/kisspng-student-university-and-college-admission-institute-medical-students-5b47ed72b04f14.8766271215314404987222.jpg" alt="Thumb" style="height: 200px">
                             </div>
                             <div class="col-md-7 info">
                                 <p>
@@ -1239,7 +1239,7 @@ require_once 'functions.php';
                         <!-- Single Item -->
                         <div class="item">
                             <div class="col-md-5 thumb">
-                                <img src="assets/img/800x800.png" alt="Thumb">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl5iOo0tCBUQKlLcKTeZ5IxD7NT5YgMORuKA&usqp=CAU" alt="Thumb" style="height: 200px">
                             </div>
                             <div class="col-md-7 info">
                                 <p>
@@ -1282,7 +1282,7 @@ require_once 'functions.php';
                     <div class="col-md-4 single-item">
                         <div class="item">
                             <div class="thumb">
-                                <a href="#"><img src="<?php echo $hostname; ?>/admin/latest_news/<?php echo $product_fetch['news_file']; ?>" alt="Thumb"></a>
+                                <a href="#"><img src="<?php echo $hostname; ?>/admin/latest_news/<?php echo $product_fetch['news_file']; ?>" alt="Thumb" style="height: 300px"></a>
                                 <div class="date">
                                     <h4><span>24</span> Nov, 2018</h4>
                                 </div>
@@ -1291,7 +1291,7 @@ require_once 'functions.php';
                                 <h4>
                                     <a href="#"><?php echo $product_fetch['news_title']; ?></a>
                                 </h4>
-                                <p>
+                                <p style="height: 80px;">
                                   <?php echo substr($product_fetch['description'],0,150) . "..."; ?>
                                 </p>
                                 <a href="single.php?id=<?php echo $product_fetch['id']; ?>">Read More <i class="fas fa-angle-double-right"></i></a>
@@ -1381,52 +1381,52 @@ require_once 'functions.php';
 
     <!-- Start Clients Area
     ============================================= -->
-    <div class="clients-area default-padding bg-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 info">
-                    <h4>Our largest education campus</h4>
-                    <p>
-                        Seeing rather her you not esteem men settle genius excuse. Deal say over you age from. Comparison new ham melancholy son themselves.
-                    </p>
-                </div>
-                <div class="col-md-8 clients">
-                    <div class="clients-items owl-carousel owl-theme text-center">
-                        <div class="single-item">
-                            <a href="#"><img src="assets/img/150x80.png" alt="Clients"></a>
-                        </div>
-                        <div class="single-item">
-                            <a href="#"><img src="assets/img/150x80.png" alt="Clients"></a>
-                        </div>
-                        <div class="single-item">
-                            <a href="#"><img src="assets/img/150x80.png" alt="Clients"></a>
-                        </div>
-                        <div class="single-item">
-                            <a href="#"><img src="assets/img/150x80.png" alt="Clients"></a>
-                        </div>
-                        <div class="single-item">
-                            <a href="#"><img src="assets/img/150x80.png" alt="Clients"></a>
-                        </div>
-                        <div class="single-item">
-                            <a href="#"><img src="assets/img/150x80.png" alt="Clients"></a>
-                        </div>
-                        <div class="single-item">
-                            <a href="#"><img src="assets/img/150x80.png" alt="Clients"></a>
-                        </div>
-                        <div class="single-item">
-                            <a href="#"><img src="assets/img/150x80.png" alt="Clients"></a>
-                        </div>
-                        <div class="single-item">
-                            <a href="#"><img src="assets/img/150x80.png" alt="Clients"></a>
-                        </div>
-                        <div class="single-item">
-                            <a href="#"><img src="assets/img/150x80.png" alt="Clients"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--    <div class="clients-area default-padding bg-gray">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-4 info">-->
+<!--                    <h4>Our largest education campus</h4>-->
+<!--                    <p>-->
+<!--                        Seeing rather her you not esteem men settle genius excuse. Deal say over you age from. Comparison new ham melancholy son themselves.-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--                <div class="col-md-8 clients">-->
+<!--                    <div class="clients-items owl-carousel owl-theme text-center">-->
+<!--                        <div class="single-item">-->
+<!--                            <a href="#"><img src="assets/img/150x80.png" alt="Clients"></a>-->
+<!--                        </div>-->
+<!--                        <div class="single-item">-->
+<!--                            <a href="#"><img src="assets/img/150x80.png" alt="Clients"></a>-->
+<!--                        </div>-->
+<!--                        <div class="single-item">-->
+<!--                            <a href="#"><img src="assets/img/150x80.png" alt="Clients"></a>-->
+<!--                        </div>-->
+<!--                        <div class="single-item">-->
+<!--                            <a href="#"><img src="assets/img/150x80.png" alt="Clients"></a>-->
+<!--                        </div>-->
+<!--                        <div class="single-item">-->
+<!--                            <a href="#"><img src="assets/img/150x80.png" alt="Clients"></a>-->
+<!--                        </div>-->
+<!--                        <div class="single-item">-->
+<!--                            <a href="#"><img src="assets/img/150x80.png" alt="Clients"></a>-->
+<!--                        </div>-->
+<!--                        <div class="single-item">-->
+<!--                            <a href="#"><img src="assets/img/150x80.png" alt="Clients"></a>-->
+<!--                        </div>-->
+<!--                        <div class="single-item">-->
+<!--                            <a href="#"><img src="assets/img/150x80.png" alt="Clients"></a>-->
+<!--                        </div>-->
+<!--                        <div class="single-item">-->
+<!--                            <a href="#"><img src="assets/img/150x80.png" alt="Clients"></a>-->
+<!--                        </div>-->
+<!--                        <div class="single-item">-->
+<!--                            <a href="#"><img src="assets/img/150x80.png" alt="Clients"></a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
     <!-- End Clients Area -->
 
     <!-- Modal -->
